@@ -39,6 +39,24 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## API configuration (important)
+
+This app calls a backend API. Configure the API base URL via a `.env` file in the project root:
+
+```
+REACT_APP_API_URL=http://localhost:5000
+```
+
+- If your backend routes are under a prefix like `/api`, include it in the base URL (e.g. `http://localhost:5000/api`).
+- Auth endpoints used by the app (relative to the base URL):
+	- `/auth/login`
+	- `/auth/register`
+	- `/auth/me`
+- Purchases: `/products`
+- Admin: `/admin/...`
+
+After editing `.env`, restart the dev server (`npm start`) so CRA picks up changes.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
